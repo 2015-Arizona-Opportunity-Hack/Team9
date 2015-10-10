@@ -1,9 +1,6 @@
 extends ./layouts/main.jade
 
 block content
-  include ./sections/foodbank.jade
-  include ./sections/familyresources.jade
-  include ./sections/cap.jade
-  include ./sections/seniors.jade
-  include ./sections/ihelp.jade
-  
+  .row
+    .col-sm-8.col-sm-offset-2(ng-repeat="sect in pages", ng-show="page.isSelected(sect.page)")
+      p {{sect.content}}

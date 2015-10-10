@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:400,300);
 /*!
  * Bootstrap v3.3.5 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
@@ -1053,7 +1054,7 @@ html {
   -webkit-tap-highlight-color: transparent; }
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Josefin Sans";
   font-size: 14px;
   line-height: 1.42857;
   color: #333333;
@@ -4110,15 +4111,15 @@ tbody.collapse.in {
   background-color: #f8f8f8;
   border-color: #e7e7e7; }
   .navbar-default .navbar-brand {
-    color: #777; }
+    color: #FFFFFF; }
     .navbar-default .navbar-brand:hover,
     .navbar-default .navbar-brand:focus {
-      color: #5e5e5e;
+      color: #e6e6e6;
       background-color: transparent; }
   .navbar-default .navbar-text {
     color: #777; }
   .navbar-default .navbar-nav > li > a {
-    color: #777; }
+    color: #FFFFFF; }
     .navbar-default .navbar-nav > li > a:hover,
     .navbar-default .navbar-nav > li > a:focus {
       color: #333;
@@ -4126,8 +4127,8 @@ tbody.collapse.in {
   .navbar-default .navbar-nav > .active > a,
   .navbar-default .navbar-nav > .active > a:hover,
   .navbar-default .navbar-nav > .active > a:focus {
-    color: #555;
-    background-color: #e7e7e7; }
+    color: #FFFFFF;
+    background-color: none; }
   .navbar-default .navbar-nav > .disabled > a,
   .navbar-default .navbar-nav > .disabled > a:hover,
   .navbar-default .navbar-nav > .disabled > a:focus {
@@ -4146,11 +4147,11 @@ tbody.collapse.in {
   .navbar-default .navbar-nav > .open > a,
   .navbar-default .navbar-nav > .open > a:hover,
   .navbar-default .navbar-nav > .open > a:focus {
-    background-color: #e7e7e7;
-    color: #555; }
+    background-color: none;
+    color: #FFFFFF; }
   @media (max-width: 767px) {
     .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-      color: #777; }
+      color: #FFFFFF; }
       .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
       .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
         color: #333;
@@ -4158,19 +4159,19 @@ tbody.collapse.in {
     .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
     .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
     .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-      color: #555;
-      background-color: #e7e7e7; }
+      color: #FFFFFF;
+      background-color: none; }
     .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a,
     .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:hover,
     .navbar-default .navbar-nav .open .dropdown-menu > .disabled > a:focus {
       color: #ccc;
       background-color: transparent; } }
   .navbar-default .navbar-link {
-    color: #777; }
+    color: #FFFFFF; }
     .navbar-default .navbar-link:hover {
       color: #333; }
   .navbar-default .btn-link {
-    color: #777; }
+    color: #FFFFFF; }
     .navbar-default .btn-link:hover,
     .navbar-default .btn-link:focus {
       color: #333; }
@@ -5423,7 +5424,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Josefin Sans";
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -5536,7 +5537,7 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Josefin Sans";
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -6059,6 +6060,9 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
+body {
+  font-weight: 400; }
+
 ul {
   padding: 0px;
   margin: 0px; }
@@ -6069,9 +6073,25 @@ li {
 a {
   text-decoration: none; }
 
+.glyphicon {
+  color: #FFFFFF; }
+
+.jumbotron {
+  margin: 0px; }
+
 .navbar {
-  background: #cf9e5e; }
+  background: #0177B4; }
   .navbar .nav-link {
-    font-size: 24px; }
+    font-size: 24px;
+    font-weight: 300; }
     .navbar .nav-link a {
       cursor: pointer; }
+    .navbar .nav-link .glyphicon {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      z-index: 3000;
+      left: 0px;
+      right: 0px;
+      top: 70%;
+      margin: auto; }
