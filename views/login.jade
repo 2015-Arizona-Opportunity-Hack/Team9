@@ -3,6 +3,15 @@ extends layout
 block content
   h1= title
   p Log in below
-  input(ng-model="user.name")
-  input(ng-model="user.password")
-  button(ng-click="login(user)" ) Login
+  form(action="/", method="post")
+      #username
+          label Username:
+          input(type="text", name="username")
+      
+      #password
+          label Password:
+          input( type="password" name="password")
+
+      #submit
+          input(type="submit", value="Log In")
+      
