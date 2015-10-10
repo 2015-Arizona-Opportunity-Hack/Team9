@@ -6069,11 +6069,9 @@ li {
 a {
   text-decoration: none; }
 
-.navigation {
-  background: #cf9e5e;
-  height: 60px; }
-  .navigation .nav-link {
-    display: inline-block;
-    cursor: pointer; }
-    .navigation .nav-link .active {
-      background: #CCC; }
+.navbar {
+  background: #cf9e5e; }
+  .navbar .nav-link {
+    font-size: 24px; }
+    .navbar .nav-link a {
+      cursor: pointer; }

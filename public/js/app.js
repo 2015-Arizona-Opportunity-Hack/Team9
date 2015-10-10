@@ -10,7 +10,7 @@ app.controller('pageController', function($scope){
   };
 
   this.isSelected = function(page){
-    this.page === page;
+    return this.page === page;
   };
 
   $scope.navLinks = {
@@ -42,6 +42,8 @@ app.controller('pageController', function($scope){
   };
 
 });
+
+var passApp = angular.module("Passport",[])
 
 /*!
  * Bootstrap v3.3.5 (http://getbootstrap.com)
