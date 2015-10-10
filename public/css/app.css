@@ -6073,6 +6073,7 @@ a {
   background: #cf9e5e;
   height: 60px; }
   .navigation .nav-link {
-    display: inline-block; }
+    display: inline-block;
+    cursor: pointer; }
     .navigation .nav-link .active {
       background: #CCC; }
