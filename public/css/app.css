@@ -6058,3 +6058,21 @@ button.close {
 @media print {
   .hidden-print {
     display: none !important; } }
+
+ul {
+  padding: 0px;
+  margin: 0px; }
+
+li {
+  list-style: none; }
+
+a {
+  text-decoration: none; }
+
+.navigation {
+  background: #cf9e5e;
+  height: 60px; }
+  .navigation .nav-link {
+    display: inline-block; }
+    .navigation .nav-link .active {
+      background: #CCC; }

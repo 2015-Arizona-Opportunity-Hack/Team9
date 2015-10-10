@@ -1,3 +1,7 @@
-.navigation
-  ul
-    li
+.navbar.navbar-default
+  .container-fluid
+    ul.nav.navbar-nav
+      li.nav-link(ng-repeat="link in navLinks",
+        ng-click="page.selectPage(link.page)",
+        ng-class="{active: page.isSelected(link.page)}") 
+        a {{link.name}}
