@@ -11,6 +11,74 @@ block content
             ta-focussed-class="focussed",
             ng-show="false") {{sect.content}}
           p(ng-show="true") {{sect.content}}
+      .row(ng-show="page.isSelected(7)")
+        .row
+          .col-sm-8.col-sm-offset-2
+            h2 Current Events
+            ul.events-list
+              li.event(ng-repeat="event in events")
+                h3 {{event.name}}
+                .row
+                  .col-sm-4
+                    h4 Location:
+                    p {{event.location.address_1}}
+                    p {{event.location.address_2}}
+                    p {{event.location.city}}
+                    p {{event.location.state}}
+                    p {{event.location.zip}}
+                  .col-sm-4
+                    h4 Cost:
+                    p ${{event.cost}}
+                    h4 Information:
+                    p {{event.info}}
+                  .col-sm-4
+                    h4 Starts At:
+                    p {{event.timeStart}}
+                    h4 Ends At: 
+                    p {{event.timeEnd}}
+        .row
+          .col-sm-8.col-sm-offset-2
+            form.form-horizontal(ng-submit="postEvent()")
+              .row
+                .col-sm-5
+                  .form-group
+                    label Name 
+                    input.form-control(type="text", ng-model="newEvent.name")
+                  .form-group
+                    label Cost
+                    input.form-control(type="text", ng-model="newEvent.cost")
+                  .form-group
+                    label Time Start
+                    input.form-control(type="text", ng-model="newEvent.timeStart")
+                  .form-group
+                    label Time End
+                    input.form-control(type="text", ng-model="newEvent.timeEnd")
+                .col-sm-5.col-sm-offset-2
+                  .form-group
+                    label Address Line 1
+                    input.form-control(type="text", ng-model="newEvent.location.address_1")
+                  .form-group
+                    label Address Line 2
+                    input.form-control(type="text", ng-model="newEvent.location.address_2")
+                  .form-group
+                    .col-sm-5
+                      .form-group
+                        label City
+                        input.form-control(type="text", ng-model="newEvent.location.city")
+                    .col-sm-5.col-sm-offset-2
+                      .form-group
+                        label State
+                        input.form-control(type="text", ng-model="newEvent.location.state")
+                  .form-group
+                    label Zip
+                    input.form-control(type="text", ng-model="newEvent.location.zip")
+              .row
+                .col-sm-12
+                  .form-group
+                    label Information Details
+                    textarea.form-control(type="text", ng-model="newEvent.info")
+                .form-group
+                  input.btn.btn-primary.btn-big.pull-right(type="submit", value="Create")
       .row(ng-show="page.isSelected(8)")
         .col-sm-8.col-sm-offset-2
           form.form-horizontal(ng-submit="donate()")
@@ -27,6 +95,7 @@ block content
                     input.form-control(type="text")
             .form-group
               input.btn.btn-primary.btn-big.pull-right(type="submit", value="DONATE")
+
   section#about
     .container
       .row
