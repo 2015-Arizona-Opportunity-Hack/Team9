@@ -6295,7 +6295,7 @@ a {
   padding: 0px; }
 
 .slick-dots {
-  bottom: 20px; }
+  bottom: 15px; }
 
 .slick-dots li button:before {
   font-size: 16px; }
@@ -6346,3 +6346,6 @@ a {
 #about .small {
   font-size: 14px;
   transition: .5s; }
+
+#about {
+  background-color: #fded9b; }
