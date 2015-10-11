@@ -518,9 +518,13 @@ block content
       //Donations Page
       .row(ng-show="page.isSelected(8)")
         .col-sm-8.col-sm-offset-2
-          form.form-horizontal(ng-submit="donate()")
+          form.form-horizontal(action="https://www.paypal.com/cgi-bin/webscr",method="post")
             .form-group
               .col-sm-12
+                input(type="hidden",name="cmd", value="_donations")
+                input(type="hidden",name="business", value="youremail@gmail.com")
+                input(type="hidden",name="lc", value="US")
+                input(type="hidden",name="item_name",value="Chandler Food Bank Nonprofit")
                 label Donate to a specific cause
                 select.form-control(ng-model="donation", ng-options="event.name for event in donationEvents")
                   option(value="") Select Cause
@@ -529,7 +533,10 @@ block content
                 label Amount
                 .input-group
                     .input-group-addon $
-                    input.form-control(type="text")
+                    input.form-control(type="text",name="amount")
+                    input(type="hidden",name="currency_code", value="USD")
+                    input(type="hidden",name="no_note", value="0")
+                    input(type="hidden",name="bn", value="PP-DonationsBF:btn_donateCC_LG.gif:NonHosedGuest")
             .form-group
               input.btn.btn-primary.btn-big.pull-right(type="submit", value="DONATE")
 
