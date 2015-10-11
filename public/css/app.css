@@ -6439,3 +6439,23 @@ hr.style-four {
   border: 1px solid #fded9b;
   color: #FFFFFF;
   margin-bottom: 20px; }
+
+.close {
+  font-size: 34px; }
+
+label.side {
+  display: inline-block;
+  background: #0177B4;
+  position: absolute;
+  left: 0px; }
+
+label.side + .form-group {
+  height: 100px;
+  background: #04AC56; }
+
+.label-title {
+  height: 100%;
+  background: #0177B4; }
+
+.vol-form-group {
+  height: 200px; }

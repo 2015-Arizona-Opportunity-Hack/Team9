@@ -24,7 +24,6 @@ router.route('/')
   .post(function(req, res){
     var event = new Event();
         event.name = req.body.name;
-        event.cost = req.body.cost;
         event.timeStart = req.body.timeStart;
         event.timeEnd = req.body.timeEnd;
         event.info = req.body.info;

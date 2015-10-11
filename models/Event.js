@@ -11,7 +11,6 @@ var eventSchema = new mongoose.Schema({
     state: String,
     zip: String
   },
-  cost: Number,
   timeStart: Date,
   timeEnd: Date,
   info: String,

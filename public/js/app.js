@@ -50,7 +50,7 @@ app.config(['$provide', function($provide){
 }]);
 app.controller('pageController', function($scope, $http, eventFactory){
 
-  this.page = 7;
+  this.page = 6;
 
   this.selectPage = function(page){
     this.page = page;
@@ -129,10 +129,14 @@ app.controller('pageController', function($scope, $http, eventFactory){
     $scope.newEvent = {};
   };
   $scope.deleteEvent = function(eventId){
-    $http({
-      method: 'DELETE',
-      url: '/api/events/' + eventId
-    });
+    var con = confirm("Are you sure you want to delete this event?");
+    if(con === true){
+      $http({
+        method: 'DELETE',
+        url: '/api/events/' + eventId
+      });
+      $scope.events = eventFactory.query();
+    }
   };
 
   //Function to send donation
@@ -140,16 +144,6 @@ app.controller('pageController', function($scope, $http, eventFactory){
   $scope.donate = function(){
 
   };
-
-  $scope.donationEvents = {
-    1: {
-      name: "First Event Ever",
-      price: 500,
-      description: "This is the first ever event that we created so you can make a specific donation at the asking price"
-    }
-  };
-
-
 
 });
 
@@ -185,6 +179,27 @@ passApp.controller("LoginCtrl", function ($scop) {
   }
 });
 
+$('document').ready(function(){
+  function aboutSplash(){
+    $('.nav-link').click(function(){
+      $('.footer-about p').animate({
+        'font-size': '14px'
+      });
+      $('.footer-about').animate({
+        'height': '120px'
+      }, 300, function(){
+        $('.nav-link').unbind( "click" );
+        $('.footer-about-1').click(function(){
+          $(this).animate({
+            'height': '600px'
+          }, 300, aboutSplash());
+        });
+      });
+    });
+  }
+  aboutSplash();
+});
+
 /*
      _ _      _       _
  ___| (_) ___| | __  (_)___
@@ -210,27 +225,6 @@ $(document).ready(function(){
     dots:true,
     autoplaySpeed:7000
   });
-});
-
-$('document').ready(function(){
-  function aboutSplash(){
-    $('.nav-link').click(function(){
-      $('.footer-about p').animate({
-        'font-size': '14px'
-      });
-      $('.footer-about').animate({
-        'height': '120px'
-      }, 300, function(){
-        $('.nav-link').unbind( "click" );
-        $('.footer-about-1').click(function(){
-          $(this).animate({
-            'height': '600px'
-          }, 300, aboutSplash());
-        });
-      });
-    });
-  }
-  aboutSplash();
 });
 
 /*!
