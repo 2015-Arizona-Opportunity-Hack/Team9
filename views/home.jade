@@ -10,4 +10,6 @@ block content
         ta-focussed-class="focussed",
         ng-show="false") {{sect.content}}
       p(ng-show="true") {{sect.content}}
+    div(ng-controller="socialController")
+      button(ng-click="twit()")
     include ./modules/footer.jade

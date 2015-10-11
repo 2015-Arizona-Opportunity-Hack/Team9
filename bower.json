@@ -18,6 +18,8 @@
   ],
   "dependencies": {
     "textAngular": "~1.4.6",
-    "bootstrap-sass": "~3.3.5"
+    "bootstrap-sass": "~3.3.5",
+    "ng-twitter-api": "~0.1.5",
+    "jsSHA": "~2.0.1"
   }
 }
