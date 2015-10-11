@@ -6300,6 +6300,9 @@ a {
 .slick-dots li button:before {
   font-size: 16px; }
 
+.slides {
+  height: 580px; }
+
 .navbar {
   background: #0177B4;
   margin-bottom: 0px;
@@ -6331,10 +6334,19 @@ a {
   .footer-about h1, .footer-about h3 {
     margin: 0px;
     padding: 0px;
-    color: #FDD113;
+    color: #FBD61E;
     font-size: 36px; }
   .footer-about p {
     font-size: 24px; }
+
+footer {
+  padding: 10px 0 10px 0;
+  background-color: #0177B4;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: bold; }
+  footer a {
+    color: #FFFFFF; }
 
 #about h1, #about h5 {
   cursor: pointer; }
@@ -6348,4 +6360,18 @@ a {
   transition: .5s; }
 
 #about {
-  background-color: #fded9b; }
+  background-color: #fded9b;
+  padding: 20 0 20 0; }
+  #about hr {
+    color: black; }
+
+hr.style-one {
+  border: 0;
+  height: 1px;
+  background: #333;
+  background-image: linear-gradient(to right, #ccc, #333, #ccc); }
+
+hr.style-four {
+  height: 12px;
+  border: 0;
+  box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5); }
