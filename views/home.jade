@@ -3,5 +3,9 @@ extends ./layouts/main.jade
 block content
   .row
     .col-sm-8.col-sm-offset-2(ng-repeat="sect in pages", ng-show="page.isSelected(sect.page)")
-      p(contentEditable="true") {{sect.content}}
-      text-angular(ng-model="editable")
+      text-angular(ng-model="sect.content",
+        ta-text-editor-class="form-content",
+        ta-html-editor-class="form-content",
+        ta-focussed-class="focussed") {{sect.content}}
+    include ./modules/footer.jade
+      
