@@ -1,10 +1,21 @@
 #bs-example-navbar-collapse-1
-  background: $primary
+  background: darken(lightgrey, 30%)
+  transition: 1s
+  box-shadow: 1px 1px 10px rgba(0,0,0, .3)
+
+.is-sticky
+  .navbar
+    background-color: $primary
+  #bs-example-navbar-collapse-1
+    background: $primary
 .navbar
-  background: $primary
+  background: darken(lightgrey, 30%)
   margin-bottom: 0px
   border: 0px
   border-radius: 0px
+  transition: 1s
+  .is-sticky
+    background: $primary
   .nav-link
     font-size: 24px
     font-weight: 300
@@ -23,6 +34,7 @@
 .navbar .navbar-nav
   float: none
   display: inline-block
+
 .navbar .navbar-collapse
   text-align: center
 .navbar

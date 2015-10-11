@@ -6325,13 +6325,24 @@ div.text {
   font-size: 16px; }
 
 #bs-example-navbar-collapse-1 {
+  background: #868686;
+  transition: 1s;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3); }
+
+.is-sticky .navbar {
+  background-color: #0177B4; }
+
+.is-sticky #bs-example-navbar-collapse-1 {
   background: #0177B4; }
 
 .navbar {
-  background: #0177B4;
+  background: #868686;
   margin-bottom: 0px;
   border: 0px;
-  border-radius: 0px; }
+  border-radius: 0px;
+  transition: 1s; }
+  .navbar .is-sticky {
+    background: #0177B4; }
   .navbar .nav-link {
     font-size: 24px;
     font-weight: 300; }
