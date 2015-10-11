@@ -1,16 +1,6 @@
 extends ./layouts/main.jade
 
 block content
-  .row
-    .col-sm-8.col-sm-offset-2(ng-repeat="sect in pages", ng-show="page.isSelected(sect.page)")
-      text-angular(ng-model="sect.content",
-        ta-text-editor-class="form-content",
-        ta-html-editor-class="form-content",
-        ta-focussed-class="focussed",
-        ng-show="false") {{sect.content}}
-      p(ng-show="true") {{sect.content}}
-    div(ng-controller="socialController")
-      button(ng-click="twit()")
   section#services
     .container
       .row
@@ -21,6 +11,22 @@ block content
             ta-focussed-class="focussed",
             ng-show="false") {{sect.content}}
           p(ng-show="true") {{sect.content}}
+      .row(ng-show="page.isSelected(8)")
+        .col-sm-8.col-sm-offset-2
+          form.form-horizontal(ng-submit="donate()")
+            .form-group
+              .col-sm-12
+                label Donate to a specific cause
+                select.form-control(ng-model="donation", ng-options="event.name for event in donationEvents")
+                  option(value="") Select Cause
+            .form-group
+              .col-sm-4
+                label Amount
+                .input-group
+                    .input-group-addon $
+                    input.form-control(type="text")
+            .form-group
+              input.btn.btn-primary.btn-big.pull-right(type="submit", value="DONATE")
   section#about
     .container
       .row
