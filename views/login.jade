@@ -1,17 +1,22 @@
 extends layout
 
 block content
-  h1= title
-  p Log in below
-  form(action="/", method="post")
-      #username
-          label Username:
-          input(type="text", name="username")
-      
-      #password
-          label Password:
-          input( type="password" name="password")
+  .container
+    .col-sm-6.col-sm-offset-3
+      h1 
+        span.login Login
 
-      #submit
-          input(type="submit", value="Log In")
-      
+     form(action="/login",method="post")
+        .form-group
+            label Email
+            input(type="text", class="form-control", name="email")
+        .form-group
+            label Password
+            input( type="password", class="form-control", name="password")
+
+        button(type="submit", class="btn btn-warning btn-lg") Login
+
+    hr
+
+    p Or go <
+      a( href="/") home
