@@ -241,14 +241,17 @@ app.controller('pageController', function($scope, $http, eventFactory, volunteer
   $scope.eventIsEditable = function(eventId){
      return $scope.eventEditable === eventId;
   };
-  $scope.editEvent = function(eventId){
+  $scope.saveEditEvent = function(eventId){
     $http({
       method: 'PUT',
-      url: '/api/events' + eventId,
+      url: '/api/events/' + eventId,
       data: $scope.editEvent
+    }).then(function(res){
+      $scope.events = eventFactory.query();
+      $scope.eventEditable = false;
+    }, function(err){
+      console.log(err);
     });
-    $scope.events = eventFactory.query();
-    $scope.eventEditable = false;
   };
 
   //Function to send donation

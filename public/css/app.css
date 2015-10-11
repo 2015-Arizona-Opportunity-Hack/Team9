@@ -6310,10 +6310,9 @@ a {
   font-size: 16px; }
 
 .navbar {
-  background-image: linear-gradient(180deg, #0177B4, #FFF);
+  background: #0177B4;
   margin-bottom: 0px;
-  border: 0px;
-  border-radius: 0px; }
+  border: 0px; }
   .navbar .nav-link {
     font-size: 24px;
     font-weight: 300; }
@@ -6419,7 +6418,8 @@ hr.main {
   font-size: 34px; }
 
 .edit-link {
-  color: #fded9b; }
+  color: #fded9b;
+  font-size: 18px; }
   .edit-link:hover {
     color: #000; }
 
