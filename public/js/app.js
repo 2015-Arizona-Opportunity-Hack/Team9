@@ -1,6 +1,6 @@
 'use strict;'
 
-var app = angular.module('mainApp', ['textAngular', 'ngTwitter']);
+var app = angular.module('mainApp', ['textAngular', 'ngTwitter', 'ngResource']);
 app.config(['$provide', function($provide){
   // this demonstrates how to register a new tool and add it to the default toolbar
   $provide.decorator('taOptions', ['$delegate', function(taOptions){
@@ -48,9 +48,9 @@ app.config(['$provide', function($provide){
     return taTools;
   }]);
 }]);
-app.controller('pageController', function($scope){
+app.controller('pageController', function($scope, $http, eventFactory, volunteerFactory){
 
-  this.page = 8;
+  this.page = 6;
 
   this.selectPage = function(page){
     this.page = page;
@@ -103,24 +103,133 @@ app.controller('pageController', function($scope){
     }
   };
 
+  //Functions for volunteers
+  $scope.newVolunteer = {
+    firstname: "Caleb",
+    lastname: "Frieze",
+    phone: "4805555555",
+    email: "test@test.com",
+    birthdate: "07/07/1990",
+    address: {
+      address_1: "123 main st",
+      address_2: "",
+      city: "Gilbert",
+      state: "AZ",
+      zip: "85296"
+    },
+    oi: {
+      work: true,
+      friend: false,
+      news: false,
+      other: false,
+      otherInfo: ""
+    },
+    aoi: {
+      operations: {
+        officeAdmin: true,
+        accounting: false,
+        maintenance: true
+      },
+      foodDonation: {
+        pickups: true,
+        sorting: true,
+        distribution: false
+      },
+      spec_events:{
+        esol: false,
+        opSanta: false,
+        back2school: true,
+        fundraising: true
+      }
+    },
+    additional: {
+      fluent: {
+        speak: "Spanglish",
+        write: ""
+      },
+      volunteerInfo: "I do a lot of volunteering when I feel like it"
+    },
+    references: [
+      {
+        name: "Caleb Frieze",
+        relationship: "Bro",
+        phone: "4805555555",
+        email: "test@test.com",
+        address: {
+          address_1: "123 main st",
+          address_2: "",
+          city: "Gilbert",
+          state: "AZ",
+          zip: "85296"
+        }
+    },
+    {
+      name: "Caleb Frieze",
+      relationship: "Bro",
+      phone: "4805555555",
+      email: "test@test.com",
+      address: {
+        address_1: "123 main st",
+        address_2: "",
+        city: "Gilbert",
+        state: "AZ",
+        zip: "85296"
+      }
+  }
+  ],
+    emergencyContact: {
+      name: "Caleb Frieze",
+      relationship: "Bro",
+      phone: "4805555555"
+    }
+  };
 
+  $scope.postNewVolunteer = function(){
+    volunteerFactory.save($scope.newVolunteer, function(){
+      $scope.newVolunteer = {};
+    });
+  };
 
+  //Get All Events
+
+  $scope.events = eventFactory.query();
+  $scope.newEvent = {};
+  $scope.postEvent = function(){
+    $http({
+      method: 'POST',
+      url: '/api/events',
+      data: {
+        name: $scope.newEvent.name,
+        address_1: $scope.newEvent.location.address_1,
+        address_2: $scope.newEvent.location.address_2,
+        city: $scope.newEvent.location.city,
+        state: $scope.newEvent.location.state,
+        zip: $scope.newEvent.location.zip,
+        cost: $scope.newEvent.cost,
+        timeStart: $scope.newEvent.timeStart,
+        timeEnd: $scope.newEvent.timeEnd,
+        info: $scope.newEvent.info
+      }
+    });
+    $scope.events = eventFactory.query();
+    $scope.newEvent = {};
+  };
+  $scope.deleteEvent = function(eventId){
+    var con = confirm("Are you sure you want to delete this event?");
+    if(con === true){
+      $http({
+        method: 'DELETE',
+        url: '/api/events/' + eventId
+      });
+      $scope.events = eventFactory.query();
+    }
+  };
 
   //Function to send donation
 
   $scope.donate = function(){
 
   };
-
-  $scope.donationEvents = {
-    1: {
-      name: "First Event Ever",
-      price: 500,
-      description: "This is the first ever event that we created so you can make a specific donation at the asking price"
-    }
-  };
-
-
 
 });
 
@@ -141,6 +250,13 @@ app.controller('socialController', function($scope, $http){
   $scope.twit = function(){
 
   };
+});
+
+app.factory('eventFactory', function($resource){
+  return $resource('/api/events');
+});
+app.factory('volunteerFactory', function($resource){
+  return $resource('/api/volunteers');
 });
 
 

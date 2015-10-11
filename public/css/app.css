@@ -6399,7 +6399,44 @@ hr.style-four {
   border: 0;
   box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5); }
 
+<<<<<<< HEAD
 hr.main {
   margin: 0;
   box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
   height: 1px; }
+=======
+.event {
+  background: #0177B4;
+  padding: 20px;
+  border-radius: 6px;
+  border: 1px solid #fded9b;
+  color: #FFFFFF;
+  margin-bottom: 20px; }
+
+.close {
+  font-size: 34px; }
+
+label.side {
+  display: inline-block;
+  background: #0177B4;
+  position: absolute;
+  left: 0px; }
+
+label.side + .form-group {
+  height: 100px;
+  background: #04AC56; }
+
+.label-title {
+  height: 100%;
+  background: #0177B4;
+  color: #FFFFFF;
+  font-size: 24px; }
+
+.vol-form-group {
+  height: 200px;
+  border: 1px solid #0177B4;
+  border-radius: 6px; }
+
+.vol-form-group.references {
+  height: 650px; }
+>>>>>>> ea12ec828bd9023608edbd91b8b9e9dab2a5f7f5

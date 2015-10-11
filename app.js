@@ -11,13 +11,16 @@ var session = require('express-session');
 
 
 // var configDB = require('./config/database.js');
-// mongoose.connect('./config/database.js')
-
+mongoose.connect('mongodb://hacker7:hacker7@ds041633.mongolab.com:41633/foodbankchd')
+require('./models/Event.js');
+require('./models/Volunteer.js');
 //configuration================================
 // require('./config/passportconfig')(passport); // pass passport for configuration
 
 var home = require('./routes/index');
-var admin = require('./routes/admin');
+var admin = require('./routes/admin'),
+    api_events = require('./routes/api/events.js'),
+    api_volunteers = require('./routes/api/volunteers.js');
 
 var app = express();
 
@@ -45,6 +48,8 @@ app.use(express.static(path.join(__dirname, 'bower_components')));
 app.use('/admin',admin);
 
 app.use('/', home);
+app.use('/api/events', api_events);
+app.use('/api/volunteers', api_volunteers);
 // app.use('/secretlogin', login);
 
 
