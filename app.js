@@ -9,14 +9,14 @@ var passport = require('passport');
 var flash = require('connect-flash');
 var session = require('express-session');
 
+
 // var configDB = require('./config/database.js');
 // mongoose.connect('./config/database.js')
 
 //configuration================================
 // require('./config/passportconfig')(passport); // pass passport for configuration
 
-
-var routes = require('./routes/index');
+var home = require('./routes/index');
 var admin = require('./routes/admin');
 
 var app = express();
@@ -32,6 +32,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'bower_components')));
+
 
 // app.use(session({secret: 'helpingnonprofitsisAwesomeee'}))
 // app.use(passport.initialize());
@@ -40,8 +42,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 // require('./routes/admin')(app, passport);
-app.use('/', routes);
 app.use('/admin',admin);
+
+app.use('/', home);
+// app.use('/secretlogin', login);
 
 
 // catch 404 and forward to error handler

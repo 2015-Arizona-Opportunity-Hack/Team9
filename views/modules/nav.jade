@@ -1,3 +1,8 @@
-.navigation
-  ul
-    li
+.navbar.navbar-default.navbar-static-top
+  .container-fluid
+    ul.nav.navbar-nav
+      li.nav-link(ng-repeat="link in pages",
+        ng-click="page.selectPage(link.page)",
+        ng-class="{active: page.isSelected(link.page)}")
+        span.glyphicon.glyphicon-triangle-top(ng-show="page.isSelected(link.page)")
+        a {{link.name}}

@@ -1,0 +1,23 @@
+{
+  "name": "Team9",
+  "version": "0.0.0",
+  "homepage": "https://github.com/Opportunity-Hack-2015-Arizona/Team9",
+  "authors": [
+    "Caleb Frieze <calebfrieze@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "textAngular": "~1.4.6",
+    "bootstrap-sass": "~3.3.5"
+  }
+}
