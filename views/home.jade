@@ -7,5 +7,7 @@ block content
       text-angular(ng-model="sect.content",
         ta-text-editor-class="form-content",
         ta-html-editor-class="form-content",
-        ta-focussed-class="focussed") {{sect.content}}
+        ta-focussed-class="focussed",
+        ng-show="false") {{sect.content}}
+      p(ng-show="true") {{sect.content}}
     include ./modules/footer.jade

@@ -6082,7 +6082,12 @@ a {
 .jumbotron {
   margin: 0px; }
 
-<<<<<<< HEAD
+.ta-hidden-input {
+  display: none; }
+
+.row {
+  margin: 0px; }
+
 /* Slider */
 .slick-slider {
   position: relative;
@@ -6294,16 +6299,6 @@ a {
 
 .slick-dots li button:before {
   font-size: 16px; }
-=======
-.ta-hidden-input {
-  display: none; }
-
-.row {
-  margin: 0px; }
-
-.jumbotron {
-  margin: 0px; }
->>>>>>> b54c22938fd77dcbe994103c16acfc2b0db3ccaa
 
 .navbar {
   background: #0177B4;
