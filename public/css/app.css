@@ -6309,8 +6309,45 @@ a {
 .slick-dots li button:before {
   font-size: 16px; }
 
-.slides {
-  height: 540px; }
+.slide-one {
+  height: 460px;
+  padding-top: 100px;
+  background-image: url("../images/logolarge.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.slide-two {
+  height: 460px;
+  padding-top: 100px;
+  background-image: url("../images/slide4-volunteers.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.slide-three {
+  height: 460px;
+  padding-top: 100px;
+  background-image: url("../images/slide3-backtoschool.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.slide-four {
+  height: 460px;
+  padding-top: 100px;
+  background-image: url("../images/slide1-visionwall.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+.slide-five {
+  height: 460px;
+  padding-top: 100px;
+  background-image: url("images/");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; }
 
 .navbar {
   background: #0177B4;
