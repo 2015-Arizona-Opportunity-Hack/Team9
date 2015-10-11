@@ -6097,6 +6097,18 @@ a {
   background-image: linear-gradient(0deg, #009CDE, #66c3eb);
   border: 1px solid #009CDE; }
 
+#map {
+  height: 500px;
+  border-radius: 6px;
+  margin-top: 50px; }
+
+#location {
+  height: 100%;
+  background-image: linear-gradient(180deg, #0177B4, #fded9b); }
+
+div.text {
+  margin-top: 50px; }
+
 /* Slider */
 .slick-slider {
   position: relative;

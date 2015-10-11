@@ -1,0 +1,49 @@
+extends ./layouts/main.jade
+
+block content
+
+  .row#location
+    script.
+        var geocoder;
+        var map;
+        function initMap() {
+          var address = "345 S. California St. Chandler, AZ 85225";
+          var mapOptions;
+          var marker;
+          geocoder = new google.maps.Geocoder();
+          geocoder.geocode( { 'address': address}, function(results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+              mapOptions = {
+                zoom: 8,
+                center: results[0].geometry.location
+              };
+              map = new google.maps.Map(document.getElementById("map"), mapOptions);
+              marker = new google.maps.Marker({
+                  map: map,
+                  position: results[0].geometry.location
+              });
+              $('#address').css({
+                border: "1px solid green"
+              });
+            } else {
+              $('#address').css({
+                border: "1px solid tomato"
+              });
+            }
+          });
+        }
+    .col-sm-3.col-sm-offset-2
+      div.text
+        h1 HOURS & LOCATION
+        p The Community Center is open Monday through Friday 8:00 am until 4:00 pm.
+        p People  needing assistance Monday through Thursday is required to have a referral card from a variety of agencies, such as: Community Action Program, area churches, Chandler Fire Department and other non profit agencies.
+        p Our emergency food bank hours are as follows:
+        p Monday 12 noon – 3:00 pm
+        p Tuesday – Thursday 9:00 am – 12 noon. 
+        p On Fridays for our Supplemental food program, no referral is required, food is distributed on a first come first served basis from 9:00 am until we run out of food boxes.   
+        p Please call (480) 963-1423 with any questions.
+        a(href="/") Go back to home
+    .col-sm-5
+      div#map(ng-model="map")
+      
+      
