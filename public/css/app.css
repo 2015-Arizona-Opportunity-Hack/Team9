@@ -6061,8 +6061,10 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
+html,
 body {
-  font-weight: 400; }
+  font-weight: 400;
+  height: 100%; }
 
 ul {
   padding: 0px;
@@ -6080,6 +6082,7 @@ a {
 .jumbotron {
   margin: 0px; }
 
+<<<<<<< HEAD
 /* Slider */
 .slick-slider {
   position: relative;
@@ -6291,9 +6294,18 @@ a {
 
 .slick-dots li button:before {
   font-size: 16px; }
+=======
+.ta-hidden-input {
+  display: none; }
+
+.jumbotron {
+  margin: 0px; }
+>>>>>>> b54c22938fd77dcbe994103c16acfc2b0db3ccaa
 
 .navbar {
-  background: #0177B4; }
+  background: #0177B4;
+  margin-bottom: 0px;
+  border: 0px; }
   .navbar .nav-link {
     font-size: 24px;
     font-weight: 300; }
@@ -6308,3 +6320,8 @@ a {
       right: 0px;
       top: 70%;
       margin: auto; }
+
+.footer-about {
+  color: #FFFFFF;
+  background: #0177B4;
+  box-sizing: border-box; }
