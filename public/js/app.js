@@ -1,3 +1,24 @@
+$('document').ready(function(){
+  function aboutSplash(){
+    $('.nav-link').click(function(){
+      $('.footer-about p').animate({
+        'font-size': '14px'
+      });
+      $('.footer-about').animate({
+        'height': '120px'
+      }, 300, function(){
+        $('.nav-link').unbind( "click" );
+        $('.footer-about-1').click(function(){
+          $(this).animate({
+            'height': '600px'
+          }, 300, aboutSplash());
+        });
+      });
+    });
+  }
+  aboutSplash();
+});
+
 'use strict;'
 
 var app = angular.module('mainApp', ['textAngular']);
@@ -104,7 +125,26 @@ app.controller('pageController', function($scope){
 
 });
 
-var passApp = angular.module("Passport",[]);
+app.controller('footerController', function(){
+  this.footer = 1;
+
+  this.isSelected = function(footer){
+    return this.footer === footer;
+  };
+
+  this.selectFooter = function(footer){
+    this.footer = footer;
+  };
+});
+
+
+var passApp = angular.module("Passport",[])
+
+passApp.controller("LoginCtrl", function ($scop) {
+  $scope.login= function (user) {
+
+  }
+});
 
 /*!
  * Bootstrap v3.3.5 (http://getbootstrap.com)

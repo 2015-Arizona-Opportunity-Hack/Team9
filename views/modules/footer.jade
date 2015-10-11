@@ -1,8 +1,15 @@
-.footer-about
+.footer-about(ng-controller="footerController as footer")
   .container
-    h1 About
-    h3 Mission
+    .col-sm-2#about
+      h1(ng-class="{big: footer.isSelected(1), small: !footer.isSelected(1)}", 
+        ng-click="footer.selectFooter(1)") About
+      h1(ng-class="{big: footer.isSelected(2), small: !footer.isSelected(2)}", 
+        ng-click="footer.selectFooter(2)") Jobs
+      h1(ng-class="{big: footer.isSelected(3), small: !footer.isSelected(3)}", 
+        ng-click="footer.selectFooter(3)") Contact
+    .col-sm-5#about-mission
+      h3 Mission
       p At Chandler Christian Community Center, we change lives by nourishing minds and bodies to create a connected, thriving community.
-
-    h3 Vision
+    .col-sm-5#about-vision
+      h3 Vision
       p To have a healthy and productive community built on a foundation of dignity and hope.

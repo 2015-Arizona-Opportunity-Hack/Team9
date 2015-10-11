@@ -6084,6 +6084,9 @@ a {
 .ta-hidden-input {
   display: none; }
 
+.row {
+  margin: 0px; }
+
 .jumbotron {
   margin: 0px; }
 
@@ -6107,6 +6110,29 @@ a {
       margin: auto; }
 
 .footer-about {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 600px;
   color: #FFFFFF;
   background: #0177B4;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  padding-top: 10px; }
+  .footer-about h1, .footer-about h3 {
+    margin: 0px;
+    padding: 0px;
+    color: #FDD113;
+    font-size: 36px; }
+  .footer-about p {
+    font-size: 24px; }
+
+#about h1, #about h5 {
+  cursor: pointer; }
+
+#about .big {
+  font-size: 30px;
+  transition: .5s; }
+
+#about .small {
+  font-size: 14px;
+  transition: .5s; }

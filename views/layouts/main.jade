@@ -12,6 +12,7 @@ html(ng-app= "mainApp")
     script(src="/js/app.js")
     
   body(ng-controller="pageController as page")
-    include ../modules/header.jade
-    include ../modules/nav.jade
+    .row
+      include ../modules/header.jade
+      include ../modules/nav.jade
     block content
