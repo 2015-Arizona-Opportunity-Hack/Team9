@@ -55,7 +55,7 @@ app.controller('pageController', function($scope){
       content: ""
     }
   };
-
+  $scope.editable = "";
 });
 
 var passApp = angular.module("Passport",[])
