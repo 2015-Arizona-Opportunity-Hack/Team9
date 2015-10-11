@@ -9,7 +9,6 @@ app.config(['$provide', function($provide){
     taOptions.forceTextAngularSanitize = true; // set false to allow the textAngular-sanitize provider to be replaced
     taOptions.keyMappings = []; // allow customizable keyMappings for specialized key boards or languages
     taOptions.toolbar = [
-        ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'pre', 'quote'],
         ['bold', 'italics', 'underline', 'ul', 'ol', 'redo', 'undo', 'clear'],
         ['justifyLeft','justifyCenter','justifyRight', 'justifyFull'],
         ['html', 'insertImage', 'insertLink']
@@ -49,7 +48,7 @@ app.config(['$provide', function($provide){
   }]);
 }]);
 app.controller('pageController', function($scope, $http, eventFactory, volunteerFactory){
-
+  
   this.page = 0;
 
   this.selectPage = function(page){
@@ -289,6 +288,37 @@ app.factory('volunteerFactory', function($resource){
 });
 
 
+//Directives
+app.directive('halloEditor', function() {
+    return {
+        restrict: 'A',
+        require: '?ngModel',
+        link: function(scope, element, attrs, ngModel) {
+            if (!ngModel) {
+                return;
+            }
+
+            element.hallo({
+               plugins: {
+                 'halloformat': {"bold": true, "italic": true, "strikethrough": true, "underline": true},
+                 'halloheadings': [1,2,3],
+                 'hallojustify' : {}
+               }
+            });
+
+            ngModel.$render = function() {
+                element.html(ngModel.$viewValue || '');
+            };
+
+            element.on('hallodeactivated', function() {
+                ngModel.$setViewValue(element.html());
+                scope.$apply();
+            });
+        }
+    };
+});
+
+
 var passApp = angular.module("Passport",[])
 
 passApp.controller("LoginCtrl", function ($scop) {
@@ -316,6 +346,12 @@ $('document').ready(function(){
     });
   }
   aboutSplash();
+  $('#text-editor').hallo({
+    plugins: {
+      'halloformat':
+        {"bold": true, "italic": true, "strikethrough": true, "underline": false}
+    }
+  });
 });
 
 /*

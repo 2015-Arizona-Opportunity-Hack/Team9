@@ -6,6 +6,7 @@ html(ng-app= "mainApp")
     script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js")
     script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular-resource.js")
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js")
+    script(src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js")
     script(type="text/javascript", src="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js")
     script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js")
     script(src="/textAngular/dist/textAngular-rangy.min.js")
@@ -13,8 +14,9 @@ html(ng-app= "mainApp")
     script(src="/textAngular/dist/textAngular.min.js")
     script(src="/jsSHA/src/sha1.js")
     script(src="/ng-twitter-api/dist/ng-twitter-api.min.js")
+    script(src="/js/hallo.js")
     script(src="/js/app.js")
-
+    link(href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/ui-lightness/jquery-ui.min.css")
   body(ng-controller="pageController as page")
     .row
       include ../modules/header.jade

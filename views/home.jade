@@ -5,13 +5,9 @@ block content
     .container
       .row
         .col-sm-8.col-sm-offset-2(ng-repeat="sect in pages", ng-show="page.isSelected(sect.page)")
-          text-angular(ng-model="sect.content",
-            ta-text-editor-class="form-content",
-            ta-html-editor-class="form-content",
-            ta-focussed-class="focussed",
-            ng-show="false") {{sect.content}}
-          p(ng-show="true") {{sect.content}}
-          
+          div(ng-show="#{admin}", ng-model="somecontent") {{sect.content}}
+          p(ng-hide="#{admin}") {{sect.content}}
+      div(ng-show="#{admin}", ng-model="somecontent", id="text-editor") Test
       //Volunteer Page
       .row(ng-show="page.isSelected(6)")
         h2 Volunteer Application
@@ -198,8 +194,10 @@ block content
               li.event(ng-repeat="event in events")
                 button.close(ng-show="#{admin}", type="button", ng-click="deleteEvent(event._id)") &times;
                 h3 {{event.name}}
-                  a.edit-link(href="", ng-show="#{admin}", ng-click="makeEditable(event._id)")  Edit
+                  a.edit-link(href="", ng-show="#{admin}", ng-click="makeEditable(event._id)", ng-hide="eventIsEditable(event._id)")  Edit
+                  a.edit-link(href="", ng-show="eventIsEditable(event._id)", ng-click="makeEditable(false)")  Cancel
                   a.edit-link(href="", ng-show="eventIsEditable(event._id)", ng-click="saveEditEvent(event._id)")  Save
+                  
                   .row(ng-show="eventIsEditable(event._id)")
                     .row
                       .col-sm-5
@@ -254,6 +252,7 @@ block content
                     p {{event.timeEnd}}
         .row(ng-show="#{admin}")
           .col-sm-8.col-sm-offset-2
+            h2 Add a New Event
             form.form-horizontal(ng-submit="postEvent()")
               .row
                 .col-sm-5

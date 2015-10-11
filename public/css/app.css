@@ -1055,7 +1055,7 @@ html {
   -webkit-tap-highlight-color: transparent; }
 
 body {
-  font-family: "Josefin Sans";
+  font-family: "Helvetica Neue";
   font-size: 14px;
   line-height: 1.42857;
   color: #333333;
@@ -5425,7 +5425,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: "Josefin Sans";
+  font-family: "Helvetica Neue";
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -5538,7 +5538,7 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: "Josefin Sans";
+  font-family: "Helvetica Neue";
   font-style: normal;
   font-weight: normal;
   letter-spacing: normal;
@@ -6378,16 +6378,25 @@ footer {
 
 #about {
   background-color: #d9f2ff;
-  padding: 20 0 20 0; }
+  padding: 20 0 20 0;
+  height: 500px; }
+  #about .container {
+    padding-top: 100px; }
   #about hr {
     color: black; }
 
 #contact {
-  background-color: #fded9b; }
+  background-color: #fded9b;
+  height: 500px; }
+  #contact .container {
+    padding-top: 100px; }
 
 #carousel {
   background-color: lightgray;
-  color: #FFFFFF; }
+  color: #FFFFFF;
+  height: 700px; }
+  #carousel .container {
+    padding-top: 100px; }
 
 hr.style-one {
   border: 0;
