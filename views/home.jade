@@ -1,17 +1,13 @@
 extends ./layouts/main.jade
 
 block content
+  include ./modules/nav.jade
   section#services
     .container
-      .row
+      .row.
         .col-sm-8.col-sm-offset-2(ng-repeat="sect in pages", ng-show="page.isSelected(sect.page)")
-          text-angular(ng-model="sect.content",
-            ta-text-editor-class="form-content",
-            ta-html-editor-class="form-content",
-            ta-focussed-class="focussed",
-            ng-show="false") {{sect.content}}
-          p(ng-show="true") {{sect.content}}
-          
+          p {{sect.content}}
+
       //Volunteer Page
       .row(ng-show="page.isSelected(6)")
         h2 Volunteer Application
@@ -393,6 +389,6 @@ block content
         .col-lg-3.col-sm-6.text-center
           p 480-726-0896
         .col-lg-3.col-sm-6.text-center
-          a(href="#") Hours/Locations
+          a(href="/location") Hours/Locations
         
       //- include ./modules/footer.jade

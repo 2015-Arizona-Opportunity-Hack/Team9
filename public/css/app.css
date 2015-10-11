@@ -6097,6 +6097,18 @@ a {
   background-image: linear-gradient(0deg, #009CDE, #66c3eb);
   border: 1px solid #009CDE; }
 
+#map {
+  height: 500px;
+  border-radius: 6px;
+  margin-top: 50px; }
+
+#location {
+  height: 100%;
+  background-image: linear-gradient(180deg, #0177B4, #fded9b); }
+
+div.text {
+  margin-top: 50px; }
+
 /* Slider */
 .slick-slider {
   position: relative;
@@ -6378,16 +6390,21 @@ footer {
 
 #about {
   background-color: #d9f2ff;
-  padding: 20 0 20 0; }
+  padding: 20 0 20 0;
+  height: 500px;
+  padding: 100px; }
   #about hr {
     color: black; }
 
 #contact {
-  background-color: #fded9b; }
+  background-color: #fded9b;
+  height: 500px;
+  padding: 100px; }
 
 #carousel {
   background-color: lightgray;
-  color: #FFFFFF; }
+  color: #FFFFFF;
+  height: 500px; }
 
 hr.style-one {
   border: 0;
