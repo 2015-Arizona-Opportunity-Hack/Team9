@@ -65,7 +65,6 @@ router.route('/:id')
           return res.send({message: "No events found"});
         }
         data.name = req.body.name;
-        data.cost = req.body.cost;
         data.timeStart = req.body.timeStart;
         data.timeEnd = req.body.timeEnd;
         data.info = req.body.info;

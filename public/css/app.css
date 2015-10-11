@@ -6406,6 +6406,7 @@ hr.main {
   height: 1px; }
 
 .event {
+  position: relative;
   background: #0177B4;
   padding: 20px;
   border-radius: 6px;
@@ -6415,6 +6416,11 @@ hr.main {
 
 .close {
   font-size: 34px; }
+
+.edit-link {
+  color: #fded9b; }
+  .edit-link:hover {
+    color: #000; }
 
 label.side {
   display: inline-block;

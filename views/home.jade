@@ -197,7 +197,47 @@ block content
             ul.events-list
               li.event(ng-repeat="event in events")
                 button.close(ng-show="#{admin}", type="button", ng-click="deleteEvent(event._id)") &times;
-                h3 {{event.name}}
+                h3 {{event.name}} 
+                  a.edit-link(href="", ng-show="#{admin}", ng-click="makeEditable(event._id)") (Edit)
+                  a.edit-link(href="", ng-show="#{admin}", ng-click="editEvent(event._id)") (Save)
+                  .row(ng-show="eventIsEditable(event._id)")
+                    .row
+                      .col-sm-5
+                        .form-group
+                          label Name 
+                          input.form-control(type="text", ng-model="editEvent.name")
+                        .form-group
+                          label Time Start
+                          input.form-control(type="text", ng-model="editEvent.timeStart")
+                        .form-group
+                          label Time End
+                          input.form-control(type="text", ng-model="editEvent.timeEnd")
+                      .col-sm-5.col-sm-offset-2
+                        .form-group
+                          label Address Line 1
+                          input.form-control(type="text", ng-model="editEvent.location.address_1")
+                        .form-group
+                          label Address Line 2
+                          input.form-control(type="text", ng-model="editEvent.location.address_2")
+                        .form-group
+                          .col-sm-5
+                            .form-group
+                              label City
+                              input.form-control(type="text", ng-model="editEvent.location.city")
+                          .col-sm-5.col-sm-offset-2
+                            .form-group
+                              label State
+                              input.form-control(type="text", ng-model="editEvent.location.state")
+                        .form-group
+                          label Zip
+                          input.form-control(type="text", ng-model="editEvent.location.zip")
+                    .row
+                      .col-sm-12
+                        .form-group
+                          label Information Details
+                          textarea.form-control(type="text", ng-model="editEvent.info")
+                      .form-group
+                        input.btn.btn-primary.btn-big.pull-right(type="submit", value="Create")
                 .row
                   .col-sm-4
                     h4 Location:
