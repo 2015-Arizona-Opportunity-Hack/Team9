@@ -11,7 +11,7 @@ var session = require('express-session');
 
 
 // var configDB = require('./config/database.js');
-mongoose.connect('mongodb://hacker7:hacker7@ds041633.mongolab.com:41633/foodbankchd')
+mongoose.connect('mongodb://hacker9:hacker9@ds041633.mongolab.com:41633/foodbankchd')
 require('./models/Event.js');
 require('./models/Volunteer.js');
 //configuration================================

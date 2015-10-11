@@ -6336,7 +6336,8 @@ a {
   text-align: center; }
 
 .navbar {
-  height: 50px; }
+  height: 50px;
+  z-index: 3000; }
 
 .footer-about {
   position: absolute;
@@ -6399,12 +6400,11 @@ hr.style-four {
   border: 0;
   box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5); }
 
-<<<<<<< HEAD
 hr.main {
   margin: 0;
   box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
   height: 1px; }
-=======
+
 .event {
   background: #0177B4;
   padding: 20px;
@@ -6439,4 +6439,3 @@ label.side + .form-group {
 
 .vol-form-group.references {
   height: 650px; }
->>>>>>> ea12ec828bd9023608edbd91b8b9e9dab2a5f7f5
