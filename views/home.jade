@@ -15,156 +15,179 @@ block content
       //Volunteer Page
       .row(ng-show="page.isSelected(6)")
         h2 Volunteer Application
-        
-        form.form-horizontal(ng-submit="newVolunteer()")
+        form.form-horizontal(ng-submit="postNewVolunteer()")
           .form-group
-            label First Name
-            input.form-control(type="text")
-            label Last Name
-            input.form-control(type="text")
-            label Birthdate
-            input.form-control(type="text", placeholder="MM/DD/YYYY")
-            label Address
-            .form-group
-              label Address Line 1
-              input.form-control(type="text", ng-model="newEvent.location.address_1")
-            .form-group
-              label Address Line 2
-              input.form-control(type="text", ng-model="newEvent.location.address_2")
-            .form-group
-              .col-sm-5
-                .form-group
-                  label City
-                  input.form-control(type="text", ng-model="newEvent.location.city")
-              .col-sm-5.col-sm-offset-2
-                .form-group
-                  label State
-                  input.form-control(type="text", ng-model="newEvent.location.state")
-            .form-group
-              label Zip
-              input.form-control(type="text", ng-model="newEvent.location.zip")
-            label Phone Number
-            input.form-control(type="text")
-            label Email
-            input.form-control(type="email")
-            .col-sm-10
-              .form-group.vol-form-group
-                label.label-title How did you hear about us?
-                label Work
-                  input(type="checkbox")
-                label Friend
-                  input(type="checkbox")
-                label News/Article
-                  input(type="checkbox")
-                label Other
-                  input(type="checkbox", ng-model="other")
-                textarea.form-control(ng-show="other")
-            .col-sm-10
+            .col-sm-12
+              .row
+                .col-sm-5
+                  .form-group
+                    label First Name
+                    input.form-control(type="text", ng-model="newVolunteer.firstname")
+                  .form-group
+                    label Last Name
+                    input.form-control(type="text", ng-model="newVolunteer.lastname")
+                  .form-group
+                    label Birthdate
+                    input.form-control(type="text", placeholder="MM/DD/YYYY", ng-model="newVolunteer.birthdate")
+                  .form-group
+                    label Phone Number
+                    input.form-control(type="text", ng-model="newVolunteer.phone")
+                  .form-group
+                    label Email
+                    input.form-control(type="email", ng-model="newVolunteer.email")
+                .col-sm-5.col-sm-offset-2
+                  .form-group
+                    label Address Line 1
+                    input.form-control(type="text", ng-model="newVolunteer.address.address_1")
+                  .form-group
+                    label Address Line 2
+                    input.form-control(type="text", ng-model="newVolunteer.address.address_2")
+                  .form-group
+                    .col-sm-5
+                      .form-group
+                        label City
+                        input.form-control(type="text", ng-model="newVolunteer.address.city")
+                    .col-sm-5.col-sm-offset-2
+                      .form-group
+                        label State
+                        input.form-control(type="text", ng-model="newVolunteer.address.state")
+                  .form-group
+                    label Zip
+                    input.form-control(type="text", ng-model="newVolunteer.address.zip")
+                  
+            .col-sm-12
               .form-group.vol-form-group
                 .col-sm-2.label-title
-                  label Areas of Interest/Availability
+                  label How did you hear about us?
+                .col-sm-4
+                  label Work
+                    input(type="checkbox", ng-model="newVolunteer.oi.work")
+                  label Friend
+                    input(type="checkbox", ng-model="newVolunteer.oi.friend")
+                  label News/Article
+                    input(type="checkbox", ng-model="newVolunteer.oi.news")
+                .col-sm-4
+                  label Other
+                    input(type="checkbox", , ng-model="newVolunteer.oi.other")
+                  textarea.form-control(ng-show="other", ng-model="newVolunteer.oi.otherInfo")
+            .col-sm-12
+              .form-group.vol-form-group
+                .col-sm-2.label-title
+                  label Areas of Interest & Availability
                 .col-sm-3
                   label Operations
                   label Office/Admin
-                    input(type="checkbox")
+                    input(type="checkbox", ng-model="newVolunteer.aoi.operations.officeAdmin")
                   label Accounting
-                    input(type="checkbox")
+                    input(type="checkbox", ng-model="newVolunteer.aoi.operations.accounting")
                   label Maintenance
-                    input(type="checkbox")
+                    input(type="checkbox", ng-model="newVolunteer.aoi.operations.maintenance")
                 .col-sm-3
                   label Food Donations
                   label Pickups
-                    input(type="checkbox")
+                    input(type="checkbox", ng-model="newVolunteer.aoi.foodDonation.pickups")
                   label Sorting
-                    input(type="checkbox")
+                    input(type="checkbox", ng-model="newVolunteer.aoi.foodDonation.sorting")
                   label Distribution
-                    input(type="checkbox")
+                    input(type="checkbox", ng-model="newVolunteer.aoi.foodDonation.distribution")
                 .col-sm-3
                   label Programs and Special Events 
                   label ESOL
-                    input(type="checkbox")
+                    input(type="checkbox", ng-model="newVolunteer.aoi.spec_events.esol")
                   label Operation Santa
-                    input(type="checkbox")
+                    input(type="checkbox", ng-model="newVolunteer.aoi.spec_events.opSanta")
                   label Back to School
-                    input(type="checkbox")
+                    input(type="checkbox", ng-model="newVolunteer.aoi.spec_events.back2school")
                   label Fundraising
-                    input(type="checkbox")
-            .col-sm-10
+                    input(type="checkbox", ng-model="newVolunteer.aoi.spec_events.fundraising")
+            .col-sm-12
               .form-group.vol-form-group
-                label.label-title Additional Info
-                label Fluent Languages
-                label Speak
-                input.form-control(type="text")
-                label Read/Write
-                input.form-control(type="text")
-                label Tell us about yourself:
-                textarea.form-control(type="text")
-            .col-sm-10  
+                .col-sm-2.label-title
+                  label Additional Info
+                .col-sm-4
+                  label Fluent Languages
+                  label Speak
+                  input.form-control(type="text", ng-model="newVolunteer.additional.fluent.speak")
+                  label Read/Write
+                  input.form-control(type="text", ng-model="newVolunteer.additional.fluent.write")
+                .col-sm-4
+                  label Tell us about yourself:
+                  textarea.form-control(type="text", ng-model="newVolunteer.additional.volunteerInfo")
+            .col-sm-12
+              .form-group.vol-form-group.references
+                .col-sm-2.label-title
+                  label References
+                .col-sm-10
+                  .row
+                    .col-sm-5
+                      label Name
+                      input.form-control(type="text", ng-model="newVolunteer.references[0].name")
+                      label Relationship
+                      input.form-control(type="text", ng-model="newVolunteer.references[0].relationship")
+                      label Phone Number
+                      input.form-control(type="text", ng-model="newVolunteer.references[0].phone")
+                      label Email
+                      input.form-control(type="email", ng-model="newVolunteer.references[0].email")
+                    .col-sm-5.col-sm-offset-2
+                      .form-group
+                        label Address Line 1
+                        input.form-control(type="text", ng-model="newVolunteer.references[0].address.address_1")
+                      .form-group
+                        label Address Line 2
+                        input.form-control(type="text", ng-model="newVolunteer.references[0].address.address_2")
+                      .form-group
+                        .col-sm-5
+                          .form-group
+                            label City
+                            input.form-control(type="text", ng-model="newVolunteer.references[0].address.city")
+                        .col-sm-5.col-sm-offset-2
+                          .form-group
+                            label State
+                            input.form-control(type="text", ng-model="newVolunteer.references[0].address.state")
+                      .form-group
+                        label Zip
+                        input.form-control(type="text", ng-model="newVolunteer.references[0].address.zip")
+                  .row
+                    .col-sm-5
+                      label Name
+                      input.form-control(type="text", ng-model="newVolunteer.references[1].phone")
+                      label Relationship
+                      input.form-control(type="text", ng-model="newVolunteer.references[1].relationship")
+                      label Phone Number
+                      input.form-control(type="text", ng-model="newVolunteer.references[1].phone")
+                      label Email
+                      input.form-control(type="email", ng-model="newVolunteer.references[1].email")
+                    .col-sm-5.col-sm-offset-2
+                      .form-group
+                        label Address Line 1
+                        input.form-control(type="text", ng-model="newVolunteer.references[1].address.address_1")
+                      .form-group
+                        label Address Line 2
+                        input.form-control(type="text", ng-model="newVolunteer.references[1].address.address_2")
+                      .form-group
+                        .col-sm-5
+                          .form-group
+                            label City
+                            input.form-control(type="text", ng-model="newVolunteer.references[1].address.city")
+                        .col-sm-5.col-sm-offset-2
+                          .form-group
+                            label State
+                            input.form-control(type="text", ng-model="newVolunteer.references[1].address.state")
+                      .form-group
+                        label Zip
+                        input.form-control(type="text", ng-model="newVolunteer.references[1].address.zip")
+            .col-sm-12
               .form-group.vol-form-group
-                label.label-title References
-                label Name
-                input.form-control(type="text")
-                label Relationship
-                input.form-control(type="text")
-                label Address
-                .form-group
-                  label Address Line 1
-                  input.form-control(type="text", ng-model="newEvent.location.address_1")
-                .form-group
-                  label Address Line 2
-                  input.form-control(type="text", ng-model="newEvent.location.address_2")
-                .form-group
-                  .col-sm-5
-                    .form-group
-                      label City
-                      input.form-control(type="text", ng-model="newEvent.location.city")
-                  .col-sm-5.col-sm-offset-2
-                    .form-group
-                      label State
-                      input.form-control(type="text", ng-model="newEvent.location.state")
-                .form-group
-                  label Zip
-                  input.form-control(type="text", ng-model="newEvent.location.zip")
-                label Phone Number
-                input.form-control(type="text")
-                label Email
-                input.form-control(type="email")
-                label Name
-                input.form-control(type="text")
-                label Relationship
-                input.form-control(type="text")
-                label Address
-                .form-group
-                  label Address Line 1
-                  input.form-control(type="text", ng-model="newEvent.location.address_1")
-                .form-group
-                  label Address Line 2
-                  input.form-control(type="text", ng-model="newEvent.location.address_2")
-                .form-group
-                  .col-sm-5
-                    .form-group
-                      label City
-                      input.form-control(type="text", ng-model="newEvent.location.city")
-                  .col-sm-5.col-sm-offset-2
-                    .form-group
-                      label State
-                      input.form-control(type="text", ng-model="newEvent.location.state")
-                .form-group
-                  label Zip
-                  input.form-control(type="text", ng-model="newEvent.location.zip")
-                label Phone Number
-                input.form-control(type="text")
-                label Email
-                input.form-control(type="email")
-            .col-sm-10
-              label.side Emergency Contact 
-              .form-group
-                label Name
-                input.form-control(type="text")
-                label Phone
-                input.form-control(type="text")
-                label Relationship
-                input.form-control(type="text")
+                .col-sm-2.label-title
+                  label Emergency Contact 
+                .col-sm-4
+                  label Name
+                  input.form-control(type="text", ng-model="newVolunteer.emergencyContact.name")
+                  label Phone
+                  input.form-control(type="text", ng-model="newVolunteer.emergencyContact.phone")
+                .col-sm-4
+                  label Relationship
+                  input.form-control(type="text", ng-model="newVolunteer.emergencyContact.relationship")
             input.btn.btn-primary.btn-big.pull-right(type="submit", value="Submit")
       //Events Page
       .row(ng-show="page.isSelected(7)")
