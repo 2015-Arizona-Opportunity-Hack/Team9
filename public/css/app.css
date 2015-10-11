@@ -4136,12 +4136,12 @@ tbody.collapse.in {
     color: #ccc;
     background-color: transparent; }
   .navbar-default .navbar-toggle {
-    border-color: #ddd; }
+    border-color: #FBD61E; }
     .navbar-default .navbar-toggle:hover,
     .navbar-default .navbar-toggle:focus {
-      background-color: #ddd; }
+      background-color: #FBD61E; }
     .navbar-default .navbar-toggle .icon-bar {
-      background-color: #888; }
+      background-color: #FBD61E; }
   .navbar-default .navbar-collapse,
   .navbar-default .navbar-form {
     border-color: #e7e7e7; }
@@ -6324,10 +6324,14 @@ div.text {
 .slick-dots li button:before {
   font-size: 16px; }
 
+#bs-example-navbar-collapse-1 {
+  background: #0177B4; }
+
 .navbar {
   background: #0177B4;
   margin-bottom: 0px;
-  border: 0px; }
+  border: 0px;
+  border-radius: 0px; }
   .navbar .nav-link {
     font-size: 24px;
     font-weight: 300; }
@@ -6353,6 +6357,12 @@ div.text {
 .navbar {
   height: 50px;
   z-index: 3000; }
+
+.navbar-header a.navbar-brand {
+  position: absolute; }
+
+button.navbar-toggle {
+  color: #0177B4; }
 
 .footer-about {
   position: absolute;
@@ -6428,6 +6438,11 @@ hr.main {
 .main-content {
   height: 500px;
   overflow: auto; }
+
+@media (max-width: 780px) {
+  #about,
+  #contact {
+    padding: 0px; } }
 
 .event {
   position: relative;
