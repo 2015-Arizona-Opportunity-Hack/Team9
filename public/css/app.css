@@ -6416,10 +6416,13 @@ footer {
   transition: .5s; }
 
 #about {
-  background-color: #fded9b;
+  background-color: #d9f2ff;
   padding: 20 0 20 0; }
   #about hr {
     color: black; }
+
+#contact {
+  background-color: #fded9b; }
 
 hr.style-one {
   border: 0;
@@ -6431,3 +6434,8 @@ hr.style-four {
   height: 12px;
   border: 0;
   box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5); }
+
+hr.main {
+  margin: 0;
+  box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+  height: 1px; }
