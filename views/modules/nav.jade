@@ -1,0 +1,13 @@
+nav#mainNav.navbar.navbar-default
+  .navbar-header
+    button.navbar-toggle.collapsed(type='button', data-toggle='collapse',data-target='#bs-example-navbar-collapse-1')
+      span.sr-only Toggle navigation
+      span.icon-bar
+      span.icon-bar
+      span.icon-bar
+  #bs-example-navbar-collapse-1.collapse.navbar-collapse
+    ul.nav.navbar-nav(align="center")
+      li.nav-link(ng-repeat="link in pages",
+        ng-click="page.selectPage(link.page)",
+        ng-class="{active: page.isSelected(link.page)}")
+        a {{link.name}}

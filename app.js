@@ -10,8 +10,8 @@ var flash = require('connect-flash');
 var session = require('express-session');
 
 
-var configDB = require('./config/db.js');
-mongoose.connect(configDB.url);
+// var configDB = require('./config/database.js');
+mongoose.connect('mongodb://hacker9:hacker9@ds041633.mongolab.com:41633/foodbankchd')
 require('./models/Event.js');
 require('./models/Volunteer.js');
 //configuration================================
